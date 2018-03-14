@@ -1,3 +1,82 @@
 <html>
-    
+<head>
+	<title>Registration</title>
+    <script type="text/javascript">
+        
+        function validation(){
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var add = document.getElementById('add').value;
+            var list = document.getElementById('select').value;
+            var radselect= radio(radbtn);
+            var checkk=checkl();
+        }
+            function radio(rad){
+                var radbtn = document.getElementsByName('gender');
+                for(var i=0; i<rad.length; i++)
+             {
+                if(rad[i].checked)
+                {
+                    return rad[i].value;
+                }
+             }}
+
+             function checkl(){
+             var check = document.getElementsByName('checkbox');
+             var checkll="";
+               for(var i=0; i<check.length; i++)
+             {
+                if(check[i].checked == true)
+                {
+                  
+                  checkll = checkll + check[i].value + "<br>";
+                 }
+             }
+             return checkll;
+             }
+</script>
+</head>	
+<body>
+<h1 align="center" >Registration</h1>
+<form id="myform">
+<table>
+<tr>
+	<td>Firstname:</td>
+	<td><input type="text" name="Firstname" id="fname"></td>
+</tr>
+<tr>
+	<td>Lastname:</td>
+	<td><input type="text" name="Lastname" id="lname"></td>
+</tr>
+<tr>
+	<td>Address:</td>
+	<td>
+    <textarea name="Address" rows="5" cols="20" id="add">
+    </textarea></td>
+</tr>
+<tr>
+    <td>State:</td>
+    <td> <select name="State" id="select" >
+    	<option value="Gujarat">Gujarat</option>
+    	<option value="Maharastra">Maharashtra</option>
+    	<option value="Tamil_Nadu">Tamil Nadu</option>
+    </select></td>
+</tr>
+<tr>
+    <td>Gender:</td>
+<td>
+    <input type="radio" name="gender" value="male">
+    Male
+    <input type="radio" name="gender" value="female">
+    Female
+</td> 
+</tr>   
+<tr>
+    <td><input type="checkbox" name="checkbox" value="yes">Yes</td>
+    <td><input type="checkbox" name="checkbox" value="no">No</td>
+</tr>
+</table>
+</form>
+<input type="submit"  value="Submit"  onclick ="validation()">
+</body>
 </html>
