@@ -19,7 +19,7 @@ body {
 .img-medium {
     height: 200px;
 }
-.button {
+#b1{
     background-color: blue;
     border: none;
     color: white;
