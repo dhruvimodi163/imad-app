@@ -1,10 +1,15 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
 var app = express();
-app.use(morgan('combined'));
+var bodyParser= require('bodt_parser');
+var urlencodedParser = bodyParser.urlencoced({ extended: true});
 
+app.use(morgan('combined'));
+ app.post('/ui/server.js', urlencodedParser, function(req,res){
+    res.send("You entered the following data");
+ });
+ 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
