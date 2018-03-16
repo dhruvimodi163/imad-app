@@ -2,7 +2,6 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var app = express();
-var bodyParser= require('bodt_parser');
 app.use(morgan('combined'));
 
  app.get('/thank',function(req,res){
