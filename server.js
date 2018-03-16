@@ -4,9 +4,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
- app.get('/thank',function(req,res){
-    res.send("You entered the following data" +req.query['fname']);
-});
+ 
  
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
